@@ -1,0 +1,1 @@
+var timetrackerApp = angular.module('timetrackerApp', ['timetrackerControllers'])
