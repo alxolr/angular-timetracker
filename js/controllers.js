@@ -9,7 +9,6 @@ timetrackerControllers.controller('TasklistCtrl', ['$scope', function($scope) {
 		"project": {
 			"name": "Alex's Timetracker",
 			"color": "purple",
-			"client": "Olaru Alexandru"
 		},
 		"tags": ["angularjs", "nodejs", "mongodb"]
 	}];
@@ -17,5 +16,6 @@ timetrackerControllers.controller('TasklistCtrl', ['$scope', function($scope) {
 
 	$scope.submit = function() {
 		$scope.tasks.push($scope.task);
+		$scope.task = {};
 	}
 }]);
