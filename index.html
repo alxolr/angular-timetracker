@@ -82,7 +82,7 @@
                 <small>{{ task.started_at|date:'medium' }} - {{ task.ended_at|date:'medium' }}</small>
               </h5>
               <div class="small-2 columns"><i class="fi fi-euro"></i> / <i class="fi fi-clock"></i> {{ task.price|number:2 }}</div>
-              <div class="small-1 columns">{{ task|hours }}</div>
+              <div class="small-1 columns"><timer></timer></div>
               <div class="small-1 columns"><span class="price"> <i class="fi fi-euro"></i> {{  task|cost|number:2 }}</span></div>
             </div>
           </li>

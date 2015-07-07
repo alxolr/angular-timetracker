@@ -39,6 +39,17 @@ timetrackerFilters.filter('total', function () {
 timetrackerFilters.filter('hours', function () {
 	return function(task) {
 
-		return "00:12:25";
+		var now = new Date();
+		
+		if (task) {
+			var milisecs = 0;
+			if (task.ended_at !== undefined) {
+				milisecs = task.ended_at.getTime() - task.started_at.getTime();
+			} else {
+				milisecs = now.getTime() - task.started_at.getTime();
+			}
+		}
+
+		return milisecs;
 	}	
 });
