@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="./bower_components/foundation/js/vendor/normalize.js"></script>
   </head>
-  <body>
+  <body ng-controller="TasklistCtrl">
     <div class="row">
       <div class="small-12 columns">
         <h1><i class="fi fi-clock primary"></i> Timetracker </h1>
         <hr/>
       </div>
-      <div class="small-12 columns" ng-controller="TasklistCtrl">
+      <div class="small-12 columns" >
 
         <form ng-submit="submit()">
         <div class="row">
@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="row">
-          <button type="submit" class="button primary right">Track</button>
+          <button type="submit" class="button alert right">Track</button>
         </div>
         </form>
 
@@ -75,21 +75,19 @@
         <ul class="no-bullet">
           <li ng-repeat="task in tasks">
             <div class="row">
-              <h5 class="small-6 columns"> {{ task.title }}
-              <label class="label {{task.project.color}}"><strong>
-              {{ task.project.name|uppercase}}</strong></label>
-              
+              <h5 class="small-6 columns">{{ task.title }}
+                <label class="label {{task.project.color}}"><strong>{{ task.project.name|uppercase }}</strong></label>
               </h5>
               <div class="small-2 columns"><i class="fi fi-euro"></i> / <i class="fi fi-clock"></i> {{ task.price|number:2 }}</div>
               <div class="small-2 columns">{{ task|hours }}</div>
-              <div class="small-2 columns"><span class="price"> <i class="fi fi-euro"></i>{{  task|cost|number:2 }}</span></div>
+              <div class="small-2 columns"><span class="price"> <i class="fi fi-euro"></i> {{  task|cost|number:2 }}</span></div>
             </div>
           </li>
         </ul>
       </div>
       <div class="small-12 columns">
         <hr/>
-        <div class="small-2 small-offset-10 columns"><span class="price"><i class="fi fi-euro"></i>{{ tasks|total }}</i></span></div>
+        <div class="small-2 small-offset-10 columns"><span class="price"><i class="fi fi-euro"></i> {{ tasks|total }}</i></span></div>
       </div>
     </div>
     

@@ -9,7 +9,12 @@ timetrackerFilters.filter('cost', function () {
 
 timetrackerFilters.filter('total', function () {
 	return function(tasks) {
-		var price = 135.35;
+		
+		var price = 0.00;
+		for (var i = 0; i < tasks.length; i++) {
+			price += parseFloat(tasks[i].price);
+		}
+
 		return price;
 	}	
 });
