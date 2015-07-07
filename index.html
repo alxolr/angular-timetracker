@@ -79,6 +79,7 @@
             <div class="row">
               <h5 class="small-8 columns">{{ task.title }}
                 <label class="label {{task.project.color}}"><strong>{{ task.project.name|uppercase }}</strong></label>
+                <small>{{ task.started_at|date:'medium' }} - {{ task.ended_at|date:'medium' }}</small>
               </h5>
               <div class="small-2 columns"><i class="fi fi-euro"></i> / <i class="fi fi-clock"></i> {{ task.price|number:2 }}</div>
               <div class="small-1 columns">{{ task|hours }}</div>
@@ -102,7 +103,7 @@
     <script src="js/directives.js"></script>
     <script src="js/filters.js"></script>
     <script>
-    $(document).foundation();
+      $(document).foundation();
     </script>
   </body>
 </html>

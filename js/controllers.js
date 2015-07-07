@@ -18,7 +18,7 @@ timetrackerControllers.controller('TasklistCtrl', ['$scope', function($scope) {
 	$scope.start = function() {
 		if ($scope.task && $scope.task.project && $scope.task.price) {
 			$scope.tasks.push($scope.task);
-			$scop.task.started_at = new Date();
+			$scope.task.started_at = new Date();
 			$scope.isStarted = true;
 		}
 	}
