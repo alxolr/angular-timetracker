@@ -22,19 +22,44 @@
       </div>
       <div class="small-12 columns" ng-controller="TasklistCtrl">
 
-        <input class="small-10 columns task" placeholder="What are you doing ?" name="task" />
-        <button class="button success"><i class="fi fi-clock"></i> Start</button>
+        <form>
+          <div class="small-6 columns">
+            <input type="text" placeholder="What are you doing ?" ng-model="task" />
+          </div>
+          <div class="small-3 columns">
+             <input type="text" placeholder="Project"/>
+          </div>
+           <div class="small-3 columns">
+           <div class="row collapse">
+           <div class="small-3 columns">
+            <span class="prefix"><i class="fi fi-euro"></i> / <i class="fi fi-clock"></i></span>
+             
+           </div>
+             <div class="small-9 columns">
+              <input type="text" placeholder="Project"/>
+             </div> 
+           </div>
+          </div>
 
+          <button class="button primary"><i class="fi fi-clock"></i> Track</button>
+        </form>
 
-        <ul>
+        <ul class="no-bullet">
           <li ng-repeat="task in tasks">
-            <h5> {{ task.title }}
-            <label class="label {{task.project.label}} round"><strong>
-            {{ task.project.name | uppercase}} • {{task.project.client | uppercase}}</strong></label> 
-            <i class="fi fi-play gray"></i>
-          </li>
+            <h5 class="small-6 columns"> {{ task.title }}
+              <label class="label {{task.project.color}}"><strong>
+            {{ task.project.name|uppercase}} • {{task.project.client|uppercase}}</strong></label> 
+          
           </h5>
+            <div class="small-2 columns"><i class="fi fi-euro"></i> / <i class="fi fi-clock"></i> {{ task.price|number:2 }}</div>
+            <div class="small-2 columns">{{ task|hours }}</div>
+            <div class="small-2 columns"><span class="price"> <i class="fi fi-euro"></i>{{  task|cost|number:2 }}</span></div>
+            </li>
         </ul>
+      </div>
+      <div class="small-12 columns">
+        <hr/>
+        <div class="small-2 small-offset-10 columns"><span class="price"><i class="fi fi-euro"></i>{{ tasks|total }}</i></span></div>
       </div>
     </div>
     
@@ -45,9 +70,9 @@
     <script src="js/script.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/directives.js"></script>
-    <script src="js/filtersjs"></script>
+    <script src="js/filters.js"></script>
     <script>
-    $(document).foundation();
+      $(document).foundation();
     </script>
   </body>
 </html>

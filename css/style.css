@@ -1,31 +1,23 @@
-.red {
-	color: red;
+.label.red {
+  background: red;
 }
 
-.green {
-	color: green;
+.label.green {
+  background: green;
 }
 
-.gray {
-	color: gray;
+.label.blue: {
+  background: blue;
 }
 
-.primary {
-	color: #008CBA;
+.label.gray {
+  background: gray;
 }
 
-input {
-    border: 2px solid white; 
-    -webkit-box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
-    -moz-box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
-    box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
-    padding: 15px;
-    background: rgba(255,255,255,0.5);
-    margin: 0 0 10px 0;
+.label.purple {
+  background: purple;
+}
+
+.price {
+  font-family: "Open Sans",Arial,sans-serif;
 }
