@@ -22,7 +22,7 @@
       </div>
       <div class="small-12 columns" >
 
-        <form ng-submit="submit()">
+        <form>
         <div class="row">
           <div class="small-6 columns">
             <div class="row collapse">
@@ -67,7 +67,8 @@
           </div>
         </div>
         <div class="row">
-          <button type="submit" class="button alert right">Track</button>
+          <button ng-hide="isStarted" ng-click="start()" type="submit" class="button success right"><i class="fi fi-play"></i> Start</button>
+          <button ng-show="isStarted" ng-click="stop()" type="submit" class="button alert right"><i class="fi fi-stop"></i> Stop</button>
         </div>
         </form>
 

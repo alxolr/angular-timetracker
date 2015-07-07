@@ -21,7 +21,7 @@ timetrackerFilters.filter('total', function () {
 
 timetrackerFilters.filter('hours', function () {
 	return function(task) {
-		var time = "00:32:37";
-		return time;
+
+		return "00:12:25";
 	}	
 });
