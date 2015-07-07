@@ -1,9 +1,26 @@
 var timetrackerFilters = angular.module('timetrackerFilters', []);
 
 timetrackerFilters.filter('cost', function () {
+
 	return function(task) {
-		var price = 15.32;
-		return price;
+
+		var price = 0.00;
+		var secs = 0;
+		var pricePerSec = 0;
+
+		if (task) {
+			pricePerSec = parseFloat(task.price / 3600);
+			console.log(pricePerSec);
+			if (task.ended_at !== undefined ) {
+				secs = parseFloat((task.ended_at.getTime() - task.started_at.getTime()) / 1000);
+			} else {
+				secs = 0;
+			}
+
+			console.log(secs);
+		}
+
+		return pricePerSec * secs;
 	}	
 });
 
