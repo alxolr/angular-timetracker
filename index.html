@@ -63,6 +63,7 @@
               <option class="label red round">red</option>
               <option class="label green round">green</option>
               <option class="label warning round">warning</option>
+              <option class="label info round">info</option>
             </select>
           </div>
         </div>
@@ -76,12 +77,12 @@
         <ul class="no-bullet">
           <li ng-repeat="task in tasks">
             <div class="row">
-              <h5 class="small-6 columns">{{ task.title }}
+              <h5 class="small-8 columns">{{ task.title }}
                 <label class="label {{task.project.color}}"><strong>{{ task.project.name|uppercase }}</strong></label>
               </h5>
               <div class="small-2 columns"><i class="fi fi-euro"></i> / <i class="fi fi-clock"></i> {{ task.price|number:2 }}</div>
-              <div class="small-2 columns">{{ task|hours }}</div>
-              <div class="small-2 columns"><span class="price"> <i class="fi fi-euro"></i> {{  task|cost|number:2 }}</span></div>
+              <div class="small-1 columns">{{ task|hours }}</div>
+              <div class="small-1 columns"><span class="price"> <i class="fi fi-euro"></i> {{  task|cost|number:2 }}</span></div>
             </div>
           </li>
         </ul>
