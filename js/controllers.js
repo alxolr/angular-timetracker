@@ -12,5 +12,10 @@ timetrackerControllers.controller('TasklistCtrl', ['$scope', function($scope) {
 			"client": "Olaru Alexandru"
 		},
 		"tags": ["angularjs", "nodejs", "mongodb"]
-	}]
+	}];
+
+
+	$scope.submit = function() {
+		$scope.tasks.push($scope.task);
+	}
 }]);
