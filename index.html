@@ -83,25 +83,22 @@
               </h5>
               <div class="small-2 columns"><i class="fi fi-euro"></i> / <i class="fi fi-clock"></i> {{ task.price|number:2 }}</div>
               <div class="small-1 columns">
-                <p ng-hide="isStarted">{{ task|hours }}</p>
+                <div data-timer></div>
               </div>
-              <div class="small-1 columns"><span class="price"> <i class="fi fi-euro"></i> {{  task|cost|number:2 }}</span></div>
+              <div class="small-1 columns"><div data-cost></div></div>
             </div>
           </li>
         </ul>
       </div>
       <div class="small-12 columns">
         <hr/>
-        <div class="small-2 small-offset-10 columns"><span class="price"><i class="fi fi-euro"></i> {{ tasks|total|number:2 }}</i></span></div>
+        <div class="small-2 small-offset-10 columns"><span class="price"><div data-total></div></span></div>
       </div>
     </div>
     
     <script src="./bower_components/foundation/js/vendor/jquery.js"></script>
     <script src="./bower_components/foundation/js/foundation.min.js"></script>
     <script src="./bower_components/angular/angular.min.js"></script>
-    <script src="./bower_components/angular-timer/app/js/_timer.js"></script>
-    <script src="./bower_components/angular-timer/app/js/i18nService.js"></script>
-    <script src="./bower_components/angular-timer/app/js/progressBarService.js"></script>
     <script src="js/app.js"></script>
     <script src="js/script.js"></script>
     <script src="js/controllers.js"></script>
