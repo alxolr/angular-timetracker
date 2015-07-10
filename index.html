@@ -21,65 +21,66 @@
         <hr/>
       </div>
       <div class="small-12 columns" >
-
         <form>
-        <div class="row">
-          <div class="small-6 columns">
-            <div class="row collapse">
-              <div class="small-1 columns">
+          <div class="row">
+            <div class="small-12 medium-6 large-6 columns">
+              <div class="row collapse">
+                <div class="small-2 medium-2 large-1 columns">
                   <span class="prefix"><i class="fi fi-flag"></i></span>
-              </div>
-              <div class="small-11 columns">
-                <input type="text" ng-model="task.title" placeholder="What task are you planning to track ?" >
+                </div>
+                <div class="small-10 medium-10 large-11 columns">
+                  <input type="text" ng-model="task.title" placeholder="What task are you planning to track ?" >
+                </div>
               </div>
             </div>
-          </div>
-          <div class="small-3 columns">
-            <div class="row collapse">
+            <div class="small-12 medium-6 large-3 columns">
+              <div class="row collapse">
                 <div class="small-2 columns">
                   <span class="prefix"><i class="fi fi-lightbulb"></i></span>
-               </div>
+                </div>
                 <div class="small-10 columns">
                   <input type="text" ng-model="task.project.name" placeholder="On which project ?">
                 </div>
-            </div>
-          </div>
-
-          <div class="small-2 columns">
-            <div class="row collapse">
-              <div class="small-4 columns">
-                <span class="prefix"><i class="fi fi-euro"></i> / <i class="fi fi-clock"></i></span>
-              </div>
-              <div class="small-8 columns">
-                  <input type="text" placeholder="5.21" ng-model="task.price">
               </div>
             </div>
+            <div class="small-12 medium-6 large-2 columns">
+              <div class="row collapse">
+                <div class="small-2 medium-2 large-4 columns">
+                  <span class="prefix"><i class="fi fi-euro"></i> / <i class="fi fi-clock"></i></span>
+                </div>
+                <div class="small-10 medium-10 large-8 columns">
+                  <input type="text" placeholder="How much do you earn per hour ?" ng-model="task.price">
+                </div>
+              </div>
+            </div>
+            <div class="small-12 medium-6 large-1 columns">
+              <select ng-model="task.project.color">
+                <option class="label blue round">blue</option>
+                <option class="label gray round">gray</option>
+                <option class="label purple round">purple</option>
+                <option class="label red round">red</option>
+                <option class="label green round">green</option>
+                <option class="label warning round">warning</option>
+                <option class="label info round">info</option>
+              </select>
+            </div>
           </div>
-           <div class="small-1 columns">
-            <select ng-model="task.project.color">
-              <option class="label blue round">blue</option>
-              <option class="label gray round">gray</option>
-              <option class="label purple round">purple</option>
-              <option class="label red round">red</option>
-              <option class="label green round">green</option>
-              <option class="label warning round">warning</option>
-              <option class="label info round">info</option>
-            </select>
+          <div class="row">
+            <div class="small-12 columns">
+              <div class="show-for-small-only">
+                <br>
+              </div>
+              <button ng-hide="isStarted" ng-click="start()" type="submit" class="button success right"><i class="fi fi-play"></i> Start</button>
+              <button ng-show="isStarted" ng-click="stop()" type="submit" class="button alert right"><i class="fi fi-stop"></i> Stop</button>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <button ng-hide="isStarted" ng-click="start()" type="submit" class="button success right"><i class="fi fi-play"></i> Start</button>
-          <button ng-show="isStarted" ng-click="stop()" type="submit" class="button alert right"><i class="fi fi-stop"></i> Stop</button>
-        </div>
         </form>
-
-
         <ul class="no-bullet">
           <li ng-repeat="task in tasks">
             <div class="row">
               <h5 class="small-8 columns">{{ task.title }}
-                <label class="label {{task.project.color}}"><strong>{{ task.project.name|uppercase }}</strong></label>
-                <small>{{ task.started_at|date:'medium' }} - {{ task.ended_at|date:'medium' }}</small>
+              <label class="label {{task.project.color}}"><strong>{{ task.project.name|uppercase }}</strong></label>
+              <small>{{ task.started_at|date:'medium' }} - {{ task.ended_at|date:'medium' }}</small>
               </h5>
               <div class="small-2 columns"><i class="fi fi-euro"></i> / <i class="fi fi-clock"></i> {{ task.price|number:2 }}</div>
               <div class="small-1 columns">
@@ -92,7 +93,7 @@
       </div>
       <div class="small-12 columns">
         <hr/>
-        <div class="small-2 small-offset-10 columns"><span class="price"><div data-total></div></span></div>
+        <div class="small-4 small-offset-8 medium-2 medium-offset-10 large-2 large-offset-10 columns"><div data-total></div></div>
       </div>
     </div>
     
