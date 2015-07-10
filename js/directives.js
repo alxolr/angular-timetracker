@@ -1,5 +1,6 @@
 var timetrackerDirectives = angular.module('timetrackerDirectives', []);
 
+
 timetrackerDirectives.directive('timer', ['$interval', function($interval) {
 
 	function link(scope, element, attrs) {
