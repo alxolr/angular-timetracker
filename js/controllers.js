@@ -13,6 +13,18 @@ timetrackerControllers.controller('TasklistCtrl', ['$scope', function($scope) {
 	}
 
 	$scope.start = function() {
+
+		if ($scope.task.price === undefined) {
+			$scope.task.price = 0.00;
+		}
+
+		if ($scope.task.project === undefined) {
+			$scope.task.project = {
+				"name": "chillout",
+				"color": "green"
+			};
+		}
+
 		$scope.tasks.push($scope.task);
 		$scope.task.started_at = new Date();
 		$scope.isStarted = true;

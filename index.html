@@ -78,15 +78,15 @@
         <ul class="no-bullet">
           <li ng-repeat="task in tasks">
             <div class="row">
-              <h5 class="small-8 columns">{{ task.title }}
-              <label class="label {{task.project.color}}"><strong>{{ task.project.name|uppercase }}</strong></label>
-              <small>{{ task.started_at|date:'medium' }} - {{ task.ended_at|date:'medium' }}</small>
+              <h5 class="small-6 columns">{{ task.title }}
+                <label class="label {{task.project.color}}"><strong>{{ task.project.name|uppercase }}</strong></label>
+                <small>{{ task.started_at|date:'medium' }} - {{ task.ended_at|date:'medium' }}</small>
               </h5>
               <div class="small-2 columns"><i class="fi fi-euro"></i> / <i class="fi fi-clock"></i> {{ task.price|number:2 }}</div>
-              <div class="small-1 columns">
+              <div class="small-2 columns">
                 <div data-timer></div>
               </div>
-              <div class="small-1 columns"><div data-cost></div></div>
+              <div class="small-2 columns"><div data-cost></div></div>
             </div>
           </li>
         </ul>
@@ -101,7 +101,7 @@
     <script src="./bower_components/foundation/js/foundation.min.js"></script>
     <script src="./bower_components/angular/angular.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/filters.js"></script>
