@@ -1,0 +1,10 @@
+{
+  "name": "alxolr-timetracker",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "*",
+    "express-session": "*",
+    "body-parser": "*",
+    "mongodb": "*"
+  }
+}
